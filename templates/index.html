@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Погодный сервис</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 50px auto; padding: 20px; line-height: 1.6; }
+        input[type="text"] { width: 70%; padding: 10px; font-size: 16px; }
+        button { padding: 10px 15px; font-size: 16px; cursor: pointer; }
+        .result { margin-top: 20px; padding: 15px; background: #f4f4f4; border-radius: 5px; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>⛅ Узнать погоду в городе</h2>
+    <form method="POST">
+        <input type="text" name="city" placeholder="Например: Moscow или Лондон" required>
+        <button type="submit">Поиск</button>
+    </form>
+
+    {% if weather %}
+        <div class="result">
+            {% if weather.error %}
+                <p class="error">{{ weather.error }}</p>
+            {% else %}
+                <h3>Погода в {{ city }}</h3>
+                <p><strong>Температура:</strong> {{ weather.temp }}°C</p>
+                <p><strong>Состояние:</strong> {{ weather.desc }}</p>
+                <p><strong>Влажность:</strong> {{ weather.humidity }}%</p>
+            {% endif %}
+        </div>
+    {% endif %}
+        <div style="margin-top: 25px; font-size: 0.8em; color: #888;">
+            Версия приложения: {{ version }}
+        </div>
+    </div>
+</body>
+</html>
