@@ -2,10 +2,7 @@
 
 def calculate_average(nums):
     """функция считает среднее число."""
-    total = sum(nums)
-    count = len(nums)
-    average = total / count
-    return average
+    return sum(nums)/len(nums)
 
 my_nums = [10, 15, 20]
 result = calculate_average(my_nums)
