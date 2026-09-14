@@ -1,3 +1,8 @@
+"""
+приложение слушает GET/POST запросы на 5000 порту
+ожидает Имя города
+возвращает погоду в запрошенном городе
+"""
 import os
 
 import requests
@@ -8,6 +13,7 @@ app = Flask(__name__)
 
 @app.after_request
 def add_security_headers(response):
+    """добавляем хидеры"""
     response.headers["X-Frame-Options"] = "DENY"
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-XSS-Protection"] = "1; mode=block"
@@ -21,6 +27,7 @@ def add_security_headers(response):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """запрашиваем город и готовим ответ"""
     app_version = os.environ.get("APP_VERSION", "development")
     weather_data = None
     city = ""
