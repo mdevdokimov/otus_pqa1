@@ -37,7 +37,7 @@ def get_weather(message):
             f"🌤 Погода в {city.capitalize()}:\n"
             f"🌡 Температура: {temp}°C\n"
             f"📝 Статус: {desc}\n"
-            f"💧 Влажность: {humidity}%"
+            f"💧 Влажность: {humidity}%\n"
         )
         bot.reply_to(message, text)
     except ValueError as e:
