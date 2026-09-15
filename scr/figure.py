@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class Figure(ABC):
 
     @property
@@ -14,5 +15,5 @@ class Figure(ABC):
 
     def add_area(self, other_figure):
         if not isinstance(other_figure, Figure):
-            raise ValueError("Ошибка, Должна быть фигура")
+            raise TypeError("Ошибка, Должна быть фигура")
         return self.area + other_figure.area

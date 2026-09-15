@@ -1,5 +1,7 @@
 from math import sqrt
+
 from figure import Figure
+
 
 class Triangle(Figure):
     def __init__(self, side_a, side_b, side_c):
