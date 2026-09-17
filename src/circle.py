@@ -1,6 +1,6 @@
 from math import pi
 
-from figure import Figure
+from src.figure import Figure
 
 
 class Circle(Figure):
@@ -11,8 +11,8 @@ class Circle(Figure):
 
     @property
     def perimeter(self):
-        return 2 * pi * self.rad
+        return round(2 * pi * self.rad, 4)
 
     @property
     def area(self):
-        return pi * (self.rad ** 2)
+        return round(pi * (self.rad ** 2), 4)
