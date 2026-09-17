@@ -1,6 +1,6 @@
 from math import pi
 
-from figure import Figure
+from src.figure import Figure
 
 
 class Circle(Figure):

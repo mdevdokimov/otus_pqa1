@@ -1,12 +1,6 @@
-import sys
-import os
 import pytest
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
-src_path = os.path.join(parent_dir, 'scr')
-sys.path.append(src_path)
-from square import Square
+from src.square import Square
 
 
 @pytest.mark.parametrize(

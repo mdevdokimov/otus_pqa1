@@ -1,6 +1,6 @@
 from math import sqrt
 
-from figure import Figure
+from src.figure import Figure
 
 
 class Triangle(Figure):
