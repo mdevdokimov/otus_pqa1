@@ -19,5 +19,5 @@ class Triangle(Figure):
     @property
     def area(self):
         self.__p = self.perimeter / 2
-        return sqrt(self.__p * (self.__p - self.side_a) * \
-                    (self.__p - self.side_b) * (self.__p - self.side_c))
+        return round(sqrt(self.__p * (self.__p - self.side_a) * \
+                    (self.__p - self.side_b) * (self.__p - self.side_c)), 4)
